@@ -23,6 +23,7 @@
 #include <google/protobuf/io/coded_stream.h>
 #include <google/protobuf/arena.h>
 #include <google/protobuf/arenastring.h>
+#include <google/protobuf/generated_message_table_driven.h>
 #include <google/protobuf/generated_message_util.h>
 #include <google/protobuf/metadata_lite.h>
 #include <google/protobuf/generated_message_reflection.h>
@@ -42,6 +43,14 @@ PROTOBUF_NAMESPACE_CLOSE
 
 // Internal implementation detail -- do not use these members.
 struct TableStruct_order_2eproto {
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTableField entries[]
+    PROTOBUF_SECTION_VARIABLE(protodesc_cold);
+  static const ::PROTOBUF_NAMESPACE_ID::internal::AuxiliaryParseTableField aux[]
+    PROTOBUF_SECTION_VARIABLE(protodesc_cold);
+  static const ::PROTOBUF_NAMESPACE_ID::internal::ParseTable schema[2]
+    PROTOBUF_SECTION_VARIABLE(protodesc_cold);
+  static const ::PROTOBUF_NAMESPACE_ID::internal::FieldMetadata field_metadata[];
+  static const ::PROTOBUF_NAMESPACE_ID::internal::SerializationTable serialization_table[];
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_order_2eproto;
@@ -63,7 +72,7 @@ class makeOrderRequest final :
  public:
   inline makeOrderRequest() : makeOrderRequest(nullptr) {}
   ~makeOrderRequest() override;
-  explicit PROTOBUF_CONSTEXPR makeOrderRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit constexpr makeOrderRequest(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   makeOrderRequest(const makeOrderRequest& from);
   makeOrderRequest(makeOrderRequest&& from) noexcept
@@ -165,6 +174,9 @@ class makeOrderRequest final :
   protected:
   explicit makeOrderRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -222,7 +234,7 @@ class makeOrderResponse final :
  public:
   inline makeOrderResponse() : makeOrderResponse(nullptr) {}
   ~makeOrderResponse() override;
-  explicit PROTOBUF_CONSTEXPR makeOrderResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  explicit constexpr makeOrderResponse(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
   makeOrderResponse(const makeOrderResponse& from);
   makeOrderResponse(makeOrderResponse&& from) noexcept
@@ -324,6 +336,9 @@ class makeOrderResponse final :
   protected:
   explicit makeOrderResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
+  private:
+  static void ArenaDtor(void* object);
+  inline void RegisterArenaDtor(::PROTOBUF_NAMESPACE_ID::Arena* arena);
   public:
 
   static const ClassData _class_data_;
@@ -492,7 +507,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void makeOrderRequest::set_goods(ArgT0&& arg0, ArgT... args) {
  
- goods_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ goods_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:makeOrderRequest.goods)
 }
 inline std::string* makeOrderRequest::mutable_goods() {
@@ -505,15 +520,15 @@ inline const std::string& makeOrderRequest::_internal_goods() const {
 }
 inline void makeOrderRequest::_internal_set_goods(const std::string& value) {
   
-  goods_.Set(value, GetArenaForAllocation());
+  goods_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* makeOrderRequest::_internal_mutable_goods() {
   
-  return goods_.Mutable(GetArenaForAllocation());
+  return goods_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* makeOrderRequest::release_goods() {
   // @@protoc_insertion_point(field_release:makeOrderRequest.goods)
-  return goods_.Release();
+  return goods_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
 inline void makeOrderRequest::set_allocated_goods(std::string* goods) {
   if (goods != nullptr) {
@@ -521,10 +536,11 @@ inline void makeOrderRequest::set_allocated_goods(std::string* goods) {
   } else {
     
   }
-  goods_.SetAllocated(goods, GetArenaForAllocation());
+  goods_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), goods,
+      GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (goods_.IsDefault()) {
-    goods_.Set("", GetArenaForAllocation());
+  if (goods_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    goods_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:makeOrderRequest.goods)
@@ -566,7 +582,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void makeOrderResponse::set_res_info(ArgT0&& arg0, ArgT... args) {
  
- res_info_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ res_info_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:makeOrderResponse.res_info)
 }
 inline std::string* makeOrderResponse::mutable_res_info() {
@@ -579,15 +595,15 @@ inline const std::string& makeOrderResponse::_internal_res_info() const {
 }
 inline void makeOrderResponse::_internal_set_res_info(const std::string& value) {
   
-  res_info_.Set(value, GetArenaForAllocation());
+  res_info_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* makeOrderResponse::_internal_mutable_res_info() {
   
-  return res_info_.Mutable(GetArenaForAllocation());
+  return res_info_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* makeOrderResponse::release_res_info() {
   // @@protoc_insertion_point(field_release:makeOrderResponse.res_info)
-  return res_info_.Release();
+  return res_info_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
 inline void makeOrderResponse::set_allocated_res_info(std::string* res_info) {
   if (res_info != nullptr) {
@@ -595,10 +611,11 @@ inline void makeOrderResponse::set_allocated_res_info(std::string* res_info) {
   } else {
     
   }
-  res_info_.SetAllocated(res_info, GetArenaForAllocation());
+  res_info_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), res_info,
+      GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (res_info_.IsDefault()) {
-    res_info_.Set("", GetArenaForAllocation());
+  if (res_info_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    res_info_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:makeOrderResponse.res_info)
@@ -616,7 +633,7 @@ template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void makeOrderResponse::set_order_id(ArgT0&& arg0, ArgT... args) {
  
- order_id_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+ order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
   // @@protoc_insertion_point(field_set:makeOrderResponse.order_id)
 }
 inline std::string* makeOrderResponse::mutable_order_id() {
@@ -629,15 +646,15 @@ inline const std::string& makeOrderResponse::_internal_order_id() const {
 }
 inline void makeOrderResponse::_internal_set_order_id(const std::string& value) {
   
-  order_id_.Set(value, GetArenaForAllocation());
+  order_id_.Set(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, value, GetArenaForAllocation());
 }
 inline std::string* makeOrderResponse::_internal_mutable_order_id() {
   
-  return order_id_.Mutable(GetArenaForAllocation());
+  return order_id_.Mutable(::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::EmptyDefault{}, GetArenaForAllocation());
 }
 inline std::string* makeOrderResponse::release_order_id() {
   // @@protoc_insertion_point(field_release:makeOrderResponse.order_id)
-  return order_id_.Release();
+  return order_id_.Release(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), GetArenaForAllocation());
 }
 inline void makeOrderResponse::set_allocated_order_id(std::string* order_id) {
   if (order_id != nullptr) {
@@ -645,10 +662,11 @@ inline void makeOrderResponse::set_allocated_order_id(std::string* order_id) {
   } else {
     
   }
-  order_id_.SetAllocated(order_id, GetArenaForAllocation());
+  order_id_.SetAllocated(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), order_id,
+      GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (order_id_.IsDefault()) {
-    order_id_.Set("", GetArenaForAllocation());
+  if (order_id_.IsDefault(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited())) {
+    order_id_.Set(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), "", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   // @@protoc_insertion_point(field_set_allocated:makeOrderResponse.order_id)
