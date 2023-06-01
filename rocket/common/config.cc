@@ -39,7 +39,6 @@ void Config::SetGlobalConfig(const char* xmlfile) {
     } else {
       g_config = new Config();
     }
-
   }
 }
 
