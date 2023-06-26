@@ -47,6 +47,8 @@ class FdEvent {
   std::function<void()> m_write_callback {nullptr};
   std::function<void()> m_error_callback {nullptr};
 
+
+
 };
 
 }

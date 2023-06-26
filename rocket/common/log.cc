@@ -2,6 +2,7 @@
 #include <sstream>
 #include <stdio.h>
 #include <assert.h>
+#include <deque>
 #include "rocket/common/log.h"
 #include "rocket/common/util.h"
 #include "rocket/common/config.h"
@@ -169,7 +170,16 @@ void Logger::pushAppLog(const std::string& msg) {
 
 
 void Logger::log() {
+  ScopeMutex<Mutex> lock(m_mutex);
+  std::queue<std::string> tmp = std::queue<std::string>{std::deque<std::string>(m_buffer.begin(),m_buffer.end())};
   
+  lock.unlock();
+
+  while(!tmp.empty()){
+    std::string msg = tmp.front();
+    tmp.pop();
+    printf(msg.c_str());
+  }
 }
 
 

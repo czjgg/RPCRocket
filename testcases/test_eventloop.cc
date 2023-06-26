@@ -25,7 +25,7 @@ void test_io_thread() {
   sockaddr_in addr;
   memset(&addr, 0, sizeof(addr));
 
-  addr.sin_port = htons(12310);
+  addr.sin_port = htons(12314);
   addr.sin_family = AF_INET;
   inet_aton("127.0.0.1", &addr.sin_addr);
 
@@ -113,7 +113,7 @@ int main() {
 
   // rt = listen(listenfd, 100);
   // if (rt != 0) {
-  //   ERRORLOG("listen error");
+  //   ERRORLOG("listen error"); 
   //   exit(1);
   // }
 

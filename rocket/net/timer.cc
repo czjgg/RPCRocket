@@ -112,7 +112,7 @@ void Timer::resetArriveTime() {
 
 void Timer::addTimerEvent(TimerEvent::s_ptr event) {
   bool is_reset_timerfd = false;
-
+  //这里要记得判断一下，下一次到达时间是否需要重新设置，if else 判断对应了可能要重新设置的两种情况，一种是新任务早于任何任务，一个是当前队列里没有任务。
   ScopeMutex<Mutex> lock(m_mutex);
   if (m_pending_events.empty()) {
     is_reset_timerfd = true;
